@@ -1,0 +1,16 @@
+<div class="container">
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let object of todoes'>
+        <td>{{object.description}}</td>
+        <td>{{object.status}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

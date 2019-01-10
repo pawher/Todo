@@ -11,7 +11,7 @@ import java.util.List;
  * Created by Pawcio on 2019-01-09.
  */
 
-@RestController
+@RestController("/tasks")
 public class MainController {
 
     @Autowired
@@ -21,4 +21,5 @@ public class MainController {
     public List<Task> getAllTasks() {
         return taskService.getAllTasks();
     }
+
 }

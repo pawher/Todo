@@ -1,6 +1,8 @@
 package com.pawher.todo.entity;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
@@ -10,7 +12,9 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "task")
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 public class Task {
 
     @Id
@@ -22,4 +26,9 @@ public class Task {
 
     @Enumerated(EnumType.STRING)
     private Status status;
+
+    public Task(String description) {
+        this.description = description;
+        this.status = Status.NEW;
+    }
 }

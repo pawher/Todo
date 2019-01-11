@@ -10,7 +10,10 @@ const routes: Routes = [
     path: '', component: TodoListComponent
   },
   {
-    path: 'todos', component: TodoComponent
+    path: 'todos/:id', component: TodoComponent
+  },
+  {
+    path: 'todo-list', component: TodoListComponent
   }
 ];
 

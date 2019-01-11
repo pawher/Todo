@@ -19,7 +19,7 @@ export class TodoListComponent implements OnInit {
   }
 
   getTodoForm() {
-    this.route.navigate(['todos'])
+    this.route.navigate(['todos', -1])
   }
 
   refreshPage() {

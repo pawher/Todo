@@ -25,7 +25,7 @@ public class Task {
     private String description;
 
     @Enumerated(EnumType.STRING)
-    private Status status;
+    private Status status = Status.NEW;
 
     public Task(String description) {
         this.description = description;

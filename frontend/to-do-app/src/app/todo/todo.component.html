@@ -1,3 +1,15 @@
-<p>
-  todo works!
-</p>
+<h1>Todo</h1>
+
+<div *ngIf="todo" class="container">
+  <form (ngSubmit)="saveTodo()">
+    <fieldset class="form-group">
+      <label>Description</label>
+      <input type="text" class="form-control" name="description" [(ngModel)]="todo.description">
+    </fieldset>
+    <fieldset class="form-group">
+      <label>Status</label>
+      <input type="text" class="form-control" value="NEW" [(ngModel)]="todo.status"> 
+    </fieldset>
+    <button type="submit" class="btn btn-success">Save</button>
+  </form>
+</div>

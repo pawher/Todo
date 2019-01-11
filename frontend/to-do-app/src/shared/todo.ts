@@ -1,4 +1,8 @@
 export class Todo {
-  public constructor(public description : string, public status : string) {
+ 
+  public descripton : string
+  public statis : string
+
+  public constructor() {
   }
 }

@@ -23,5 +23,4 @@ public class MainController {
     public List<Task> getAllTasks() {
         return taskService.getAllTasks();
     }
-
 }

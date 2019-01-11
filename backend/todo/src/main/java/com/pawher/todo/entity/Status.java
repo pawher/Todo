@@ -5,5 +5,5 @@ package com.pawher.todo.entity;
  */
 public enum Status {
 
-    NEW, IN_PROGRESS, DONE, ARCHIWED
+    NEW, IN_PROGRESS, DONE, ARCHIVED
 }

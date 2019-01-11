@@ -6,18 +6,22 @@ import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './menu/menu.component';
 import { TodoService } from './service/todo.service';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { TodoComponent } from './todo/todo.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    TodoListComponent
+    TodoListComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [TodoService],
   bootstrap: [AppComponent]

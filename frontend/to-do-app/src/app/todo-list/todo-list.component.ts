@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { TodoService } from '../service/todo.service';
 import { Todo } from '../../shared/Todo';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-todo-list',
@@ -9,12 +10,16 @@ import { Todo } from '../../shared/Todo';
 })
 export class TodoListComponent implements OnInit {
 
-  constructor(private todoService : TodoService) { }
+  constructor(private todoService : TodoService, private route : Router) { }
 
   todoes:Todo[]
 
   ngOnInit() {
     this.refreshPage()
+  }
+
+  getTodoForm() {
+    this.route.navigate(['todos'])
   }
 
   refreshPage() {

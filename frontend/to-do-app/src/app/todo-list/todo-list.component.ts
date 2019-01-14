@@ -13,6 +13,7 @@ export class TodoListComponent implements OnInit {
   constructor(private todoService : TodoService, private route : Router) { }
 
   todoes:Todo[]
+  onDeleteMessage : string
 
   ngOnInit() {
     this.refreshPage()
@@ -20,6 +21,14 @@ export class TodoListComponent implements OnInit {
 
   getTodoForm() {
     this.route.navigate(['todos', -1])
+  }
+
+  deleteTodo(id) {
+    this.todoService.deleteTodo(id).subscribe(
+      x=> {
+        this.refreshPage();
+        this.onDeleteMessage = `Todo with id: ${id} has been deleted`
+      })
   }
 
   refreshPage() {

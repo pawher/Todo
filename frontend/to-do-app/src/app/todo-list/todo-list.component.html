@@ -1,12 +1,19 @@
 <h1>Task list</h1>
 <br>
+
 <div class="container">
+
+  <div *ngIf='onDeleteMessage' class="alert alert-success">
+    {{onDeleteMessage}}
+  </div>
+
   <table class="table table-dark table-striped">
     <thead>
       <tr>
         <th>ID</th>
         <th>Description</th>
         <th>Status</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -14,6 +21,7 @@
         <td>{{object.id}}</td>
         <td>{{object.description}}</td>
         <td>{{object.status}}</td>
+        <button class="btn btn-danger" (click)="deleteTodo(object.id)">Delete</button>
       </tr>
     </tbody>
   </table>

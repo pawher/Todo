@@ -18,4 +18,8 @@ export class TodoService {
   createTodo(todo) {
     return this.httpClient.post(`http://localhost:8080/tasks`, todo)
   }
+
+  deleteTodo(id) {
+    return this.httpClient.delete(`http://localhost:8080/tasks/${id}`)
+  }
 }

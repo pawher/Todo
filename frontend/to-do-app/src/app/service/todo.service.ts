@@ -15,7 +15,7 @@ export class TodoService {
     return this.httpClient.get<Todo[]>("http://localhost:8080/tasks")
   }
 
-  createTodo(todo) {
+  createTodo(todo : Todo) {
     return this.httpClient.post(`http://localhost:8080/tasks`, todo)
   }
 

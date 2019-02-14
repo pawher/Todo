@@ -1,14 +1,21 @@
 <h1>Todo</h1>
 
 <div *ngIf="todo" class="container">
-  <form (ngSubmit)="saveTodo()">
+  <form [formGroup]="registerForm" (ngSubmit)="saveTodo()">
     <fieldset class="form-group">
       <label>Description</label>
-      <input type="text" class="form-control" name="description" [(ngModel)]="todo.description">
+      <input type="text" formControlName="desc" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.desc.errors }" [(ngModel)]="todo.description"/>
+      <div *ngIf="submitted && f.desc.errors" class="invalid-feedback">
+        <div *ngIf="f.desc.errors.required">Description is required</div>
+      </div>
     </fieldset>
     <fieldset class="form-group">
       <label>Status</label>
-      <input type="text" class="form-control" value="NEW" [(ngModel)]="todo.status"> 
+      <input type="text" formControlName="status" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.status.errors }"
+        [(ngModel)]="todo.status" />
+      <div *ngIf="submitted && f.status.errors" class="invalid-feedback">
+        <div *ngIf="f.status.errors.required">Status is required</div>
+      </div>
     </fieldset>
     <button type="submit" class="btn btn-success">Save</button>
   </form>

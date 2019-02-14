@@ -1,7 +1,7 @@
 export class Todo {
  
   public descripton : string
-  public statis : string
+  public status : string
 
   public constructor() {
   }
